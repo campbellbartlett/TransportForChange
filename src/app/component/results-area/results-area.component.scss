@@ -1,0 +1,72 @@
+div {
+  text-align: center;
+}
+
+.fullHeight {
+  height: 100%;
+}
+
+.flex {
+  flex-direction: row;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.column {
+  flex-direction: column;
+}
+
+.padding {
+  padding: 1rem;
+}
+
+.title {
+  font-size: x-large;
+}
+
+.subTitle {
+  font-size: medium;
+}
+
+ion-icon {
+  margin-top: 1.7rem;
+}
+
+.icon-circle {
+  font-size: small;
+  color: white;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 100px;
+  vertical-align: middle;
+  padding: 0.3rem;
+}
+
+.green {
+  background: #00cc66;
+}
+
+.red {
+  background: #ff9999;
+}
+
+.red-text {
+  color: #ff9999;
+}
+
+.green-text {
+  color: #00cc66;
+}
+
+.stat {
+  margin-top: 1.7rem;
+  margin-left: 0.3rem;
+}
+
+.statArea {
+  display: flex;
+}
+
+.statAreaContainer {
+  margin-left: 2rem;
+}

@@ -1,0 +1,26 @@
+<ion-card>
+  <ion-card-header>
+    <div class="card-header">
+      <ion-card-title>Trip details</ion-card-title>
+      <ion-button fill="clear" size="small" (click)="collapsePressed()">
+        <ion-icon [hidden]="cardCollapsed" name="chevron-up-outline" size="large" color="dark"></ion-icon>
+        <ion-icon [hidden]="!cardCollapsed" name="chevron-down-outline" size="large" color="dark"></ion-icon>
+      </ion-button>
+    </div>
+  </ion-card-header>
+
+  <ion-card-content [hidden]="cardCollapsed">
+    <ion-item class="address-item">
+      <ion-label position="floating">Trip start</ion-label>
+      <app-address-box [(address)]="startAddress"></app-address-box>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Trip end</ion-label>
+      <app-address-box [(address)]="endAddress"></app-address-box>
+    </ion-item>
+    <ion-button class="show-me" color="dark" (click)="showMeClicked()">
+      Show me
+      <ion-ripple-effect></ion-ripple-effect>
+    </ion-button>
+  </ion-card-content>
+</ion-card>

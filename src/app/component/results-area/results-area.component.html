@@ -1,0 +1,54 @@
+<div *ngIf="showResults()">
+    <ion-card>
+        <div class="fullHeight flex padding">
+            <div class="green-text">
+                <div class="title">Best Choice</div>
+                <div class="subTitle">Public Transport</div>
+                <ion-icon size="large" name="bus-outline"></ion-icon>
+                <div class="flex">
+                    <ion-icon name="star-outline"></ion-icon>
+                    <ion-icon name="star-outline"></ion-icon>
+                    <ion-icon name="star-outline"></ion-icon>
+                    <ion-icon name="star-outline"></ion-icon>
+                    <ion-icon name="star-outline"></ion-icon>
+                </div>
+                <div class="flex column statAreaContainer">
+                    <div class="statArea">
+                        <ion-icon class="icon-circle green" name="leaf"></ion-icon>
+                        <div class="stat">{{(leftTrip$ | async)?.carbonCost}}kg</div>
+                    </div>
+                    <div class="statArea">
+                        <ion-icon class="icon-circle green" name="timer"></ion-icon>
+                        <div class="stat">{{(leftTrip$ | async) | arriveDepartDuration}}</div>
+                    </div>
+                    <div class="statArea">
+                        <ion-icon class="icon-circle green" name="wallet"></ion-icon>
+                        <div class="stat">${{(leftTrip$ | async)?.moneyCost}}</div>
+                    </div>
+                </div>
+            </div>
+            <div class="red-text">
+                <div class="title">Worst Choice</div>
+                <div class="subTitle">Private Vehicle</div>
+                <ion-icon size="large" name="car-outline"></ion-icon>
+                <div class="flex">
+                    <ion-icon name="star-outline"></ion-icon>
+                </div>
+                <div class="flex column statAreaContainer">
+                    <div class="statArea">
+                        <ion-icon class="icon-circle red" name="leaf"></ion-icon>
+                        <div class="stat">{{(rightTrip$ | async)?.carbonCost}}kg</div>
+                    </div>
+                    <div class="statArea">
+                        <ion-icon class="icon-circle red" name="timer"></ion-icon>
+                        <div class="stat">{{(rightTrip$ | async) | arriveDepartDuration}}</div>
+                    </div>
+                    <div class="statArea">
+                        <ion-icon class="icon-circle red" name="wallet"></ion-icon>
+                        <div class="stat">${{(rightTrip$ | async)?.moneyCost}}</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </ion-card>
+</div>

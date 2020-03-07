@@ -1,0 +1,6 @@
+<ion-input class="address" clearInput="true" [(ngModel)]="autocomplete.input" (ionInput)="inputEvent()" (ionChange)="changeEvent()"></ion-input>
+<ion-list [hidden]="autoCompleteItemsHidden">
+  <ion-item *ngFor="let item of autocompleteItems" tappable (click)="searchResultSelected(item)">
+    {{ item.description }}
+  </ion-item>
+</ion-list>
