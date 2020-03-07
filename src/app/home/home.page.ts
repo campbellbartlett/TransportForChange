@@ -1,7 +1,7 @@
-import { Component, EventEmitter, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { LatLongTuple, TripGoService } from '../service/trip-go.service';
 import { Trip, TripType } from '../generated/tripGo';
-import { Subject, ReplaySubject } from 'rxjs';
+import { ReplaySubject, Subject } from 'rxjs';
 
 @Component({
     selector: 'app-home',
@@ -51,10 +51,5 @@ export class HomePage implements OnInit {
                 this.$rightTrip
                     .next(bestTrip);
             });
-    }
-
-    isLoading($event: any) {
-        console.log('loading started');
-        console.log($event);
     }
 }

@@ -1,10 +1,9 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { combineLatest, Observable, Subject, zip } from 'rxjs';
+import { Component, Input, OnInit } from '@angular/core';
+import { combineLatest, Subject } from 'rxjs';
 import { LatLongTuple, TripGoService } from '../../service/trip-go.service';
 // @ts-ignore
-import {} from 'googlemaps';
-import LatLng = google.maps.LatLng;
 import { map } from 'rxjs/operators';
+import LatLng = google.maps.LatLng;
 
 @Component({
     selector: 'app-address-bar',
