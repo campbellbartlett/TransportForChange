@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Group, RoutingResponse, Trip } from '../generated/tripGo';
-import { Observable } from 'rxjs';
+import { Observable, Subject } from 'rxjs';
 import LatLng = google.maps.LatLng;
 import { environment } from '../../environments/environment';
 
@@ -9,6 +9,8 @@ import { environment } from '../../environments/environment';
     providedIn: 'root'
 })
 export class TripGoService {
+    isLoading$: Subject<boolean> = new Subject();
+
     private baseUrl: 'https://api.tripgo.com/v1/';
 
     private httpOptions = {

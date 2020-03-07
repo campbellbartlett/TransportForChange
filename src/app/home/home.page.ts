@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { LatLongTuple, TripGoService } from '../service/trip-go.service';
 import { Trip, TripType } from '../generated/tripGo';
-import { Subject, ReplaySubject } from 'rxjs';
+import { ReplaySubject, Subject } from 'rxjs';
 
 @Component({
     selector: 'app-home',
@@ -27,8 +27,12 @@ export class HomePage implements OnInit {
 
     getPublicTransportTrip(points: LatLongTuple) {
         this.tripGoService.$getPublicTransportTripsFromPointToPoint(points)
-            .subscribe(res => {
-                const bestTrip = this.tripGoService.getBestTripFromGroup(res.groups);
+            .subscribe(trips => {
+                const bestTrip = this.tripGoService.getBestTripFromGroup(trips.groups);
+                if (!bestTrip) {
+                    console.error('Unable to determine best trip');
+                    console.log(trips);
+                }
                 bestTrip.type = TripType.PT_PUB;
                 this.$leftTrip
                     .next(bestTrip);
@@ -37,12 +41,15 @@ export class HomePage implements OnInit {
 
     getPrivateVehicleTrip(points: LatLongTuple) {
         this.tripGoService.$getPrivateVehicleTripsFromPointToPoint(points)
-            .subscribe(res => {
-                const bestTrip = this.tripGoService.getBestTripFromGroup(res.groups);
+            .subscribe(trips => {
+                const bestTrip = this.tripGoService.getBestTripFromGroup(trips.groups);
+                if (!bestTrip) {
+                    console.error('Unable to determine best trip');
+                    console.log(trips);
+                }
                 bestTrip.type = TripType.ME_CAR;
                 this.$rightTrip
                     .next(bestTrip);
             });
     }
-
 }

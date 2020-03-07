@@ -1,4 +1,5 @@
-<div *ngIf="showResults()">
+<div *ngIf="isLoading then skeletons"></div>
+<div *ngIf="showResults() && !isLoading">
     <ion-card>
         <div class="fullHeight flex padding">
             <div class="green-text">
@@ -52,3 +53,39 @@
         </div>
     </ion-card>
 </div>
+
+<ng-template #skeletons>
+    <ion-card>
+        <div class="fullHeight flex column padding">
+            <div class="fullWidth flex justify-centre">
+                <div>Loading...</div>
+            </div>
+            <div class="fullHeight flex">
+                <div>
+                    <div class="ion-padding custom-skeleton">
+                        <ion-skeleton-text animated style="width: 10rem; line-height: 1.6rem;"></ion-skeleton-text>
+                        <ion-skeleton-text animated style="line-height: 1rem;"></ion-skeleton-text>
+                        <ion-skeleton-text animated style="width: 8rem"></ion-skeleton-text>
+                        <ion-skeleton-text animated style="width: 7rem"></ion-skeleton-text>
+                        <ion-skeleton-text animated style="width: 6rem"></ion-skeleton-text>
+                        <ion-skeleton-text animated style="width: 8rem"></ion-skeleton-text>
+                        <ion-skeleton-text animated style="width: 7rem"></ion-skeleton-text>
+                        <ion-skeleton-text animated style="width: 6rem"></ion-skeleton-text>
+                    </div>
+                </div>
+                <div>
+                    <div class="ion-padding custom-skeleton">
+                        <ion-skeleton-text animated style="width: 10rem; line-height: 1.6rem;"></ion-skeleton-text>
+                        <ion-skeleton-text animated style="line-height: 1rem;"></ion-skeleton-text>
+                        <ion-skeleton-text animated style="width: 8rem"></ion-skeleton-text>
+                        <ion-skeleton-text animated style="width: 7rem"></ion-skeleton-text>
+                        <ion-skeleton-text animated style="width: 6rem"></ion-skeleton-text>
+                        <ion-skeleton-text animated style="width: 8rem"></ion-skeleton-text>
+                        <ion-skeleton-text animated style="width: 7rem"></ion-skeleton-text>
+                        <ion-skeleton-text animated style="width: 6rem"></ion-skeleton-text>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </ion-card>
+</ng-template>
