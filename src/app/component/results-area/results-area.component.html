@@ -1,5 +1,5 @@
 <div *ngIf="isLoading then skeletons"></div>
-<div *ngIf="showResults()">
+<div *ngIf="showResults() && !isLoading">
     <ion-card>
         <div class="fullHeight flex padding">
             <div class="green-text">
@@ -61,28 +61,28 @@
                 <div>Loading...</div>
             </div>
             <div class="fullHeight flex">
-                <div class="width-15">
+                <div>
                     <div class="ion-padding custom-skeleton">
-                        <ion-skeleton-text animated style="width: 60%"></ion-skeleton-text>
-                        <ion-skeleton-text animated></ion-skeleton-text>
-                        <ion-skeleton-text animated style="width: 88%"></ion-skeleton-text>
-                        <ion-skeleton-text animated style="width: 70%"></ion-skeleton-text>
-                        <ion-skeleton-text animated style="width: 60%"></ion-skeleton-text>
-                        <ion-skeleton-text animated style="width: 88%"></ion-skeleton-text>
-                        <ion-skeleton-text animated style="width: 70%"></ion-skeleton-text>
-                        <ion-skeleton-text animated style="width: 60%"></ion-skeleton-text>
+                        <ion-skeleton-text animated style="width: 10rem; line-height: 1.6rem;"></ion-skeleton-text>
+                        <ion-skeleton-text animated style="line-height: 1rem;"></ion-skeleton-text>
+                        <ion-skeleton-text animated style="width: 8rem"></ion-skeleton-text>
+                        <ion-skeleton-text animated style="width: 7rem"></ion-skeleton-text>
+                        <ion-skeleton-text animated style="width: 6rem"></ion-skeleton-text>
+                        <ion-skeleton-text animated style="width: 8rem"></ion-skeleton-text>
+                        <ion-skeleton-text animated style="width: 7rem"></ion-skeleton-text>
+                        <ion-skeleton-text animated style="width: 6rem"></ion-skeleton-text>
                     </div>
                 </div>
-                <div class="width-15">
+                <div>
                     <div class="ion-padding custom-skeleton">
-                        <ion-skeleton-text animated style="width: 60%"></ion-skeleton-text>
-                        <ion-skeleton-text animated></ion-skeleton-text>
-                        <ion-skeleton-text animated style="width: 88%"></ion-skeleton-text>
-                        <ion-skeleton-text animated style="width: 70%"></ion-skeleton-text>
-                        <ion-skeleton-text animated style="width: 60%"></ion-skeleton-text>
-                        <ion-skeleton-text animated style="width: 88%"></ion-skeleton-text>
-                        <ion-skeleton-text animated style="width: 70%"></ion-skeleton-text>
-                        <ion-skeleton-text animated style="width: 60%"></ion-skeleton-text>
+                        <ion-skeleton-text animated style="width: 10rem; line-height: 1.6rem;"></ion-skeleton-text>
+                        <ion-skeleton-text animated style="line-height: 1rem;"></ion-skeleton-text>
+                        <ion-skeleton-text animated style="width: 8rem"></ion-skeleton-text>
+                        <ion-skeleton-text animated style="width: 7rem"></ion-skeleton-text>
+                        <ion-skeleton-text animated style="width: 6rem"></ion-skeleton-text>
+                        <ion-skeleton-text animated style="width: 8rem"></ion-skeleton-text>
+                        <ion-skeleton-text animated style="width: 7rem"></ion-skeleton-text>
+                        <ion-skeleton-text animated style="width: 6rem"></ion-skeleton-text>
                     </div>
                 </div>
             </div>

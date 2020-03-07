@@ -37,7 +37,7 @@ export class AddressBarComponent implements OnInit {
             const startPoint$ = await this.convertAddressToPoint(this.startAddress);
             const endPoint$ = await this.convertAddressToPoint(this.endAddress);
 
-            const combination$ = combineLatest([startPoint$, endPoint$])
+            combineLatest([startPoint$, endPoint$])
                 .pipe(
                     map(result => ({startPoint: result[0], endPoint: result[1]}))
                 ).subscribe(pair => {

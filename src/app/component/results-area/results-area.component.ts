@@ -1,7 +1,7 @@
 import { ChangeDetectorRef, Component, Input, OnInit } from '@angular/core';
 import { Trip } from '../../generated/tripGo';
-import { Subject, zip } from 'rxjs';
-import { map } from 'rxjs/operators';
+import { combineLatest, forkJoin, Subject, zip } from 'rxjs';
+import { map, withLatestFrom } from 'rxjs/operators';
 import { TripGoService } from '../../service/trip-go.service';
 
 @Component({
@@ -23,27 +23,18 @@ export class ResultsAreaComponent implements OnInit {
     }
 
     ngOnInit() {
-        this.leftTrip$.subscribe(trip => {
-            this.leftTripLoaded = true;
-            this.changeDetector.detectChanges();
-            this.updateIsLoading();
-        });
-        this.rightTrip$.subscribe(trip => {
-            this.rightTripLoaded = true;
-            this.changeDetector.detectChanges();
-            this.updateIsLoading();
-        });
+        zip(this.leftTrip$, this.rightTrip$)
+            .pipe(map(trips => ({leftTrip: trips[0], rightTrip: trips[1]})))
+            .subscribe(trips => {
+                this.leftTripLoaded = true;
+                this.rightTripLoaded = true;
+                this.tripGoService.isLoading$.next(false);
+            });
 
         this.tripGoService.isLoading$.subscribe(isLoading => {
             this.isLoading = isLoading;
             this.changeDetector.detectChanges();
         });
-    }
-
-    private updateIsLoading() {
-        if (this.showResults()) {
-            this.tripGoService.isLoading$.next(false);
-        }
     }
 
 
