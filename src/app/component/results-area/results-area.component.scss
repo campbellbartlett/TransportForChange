@@ -6,10 +6,30 @@ div {
   height: 100%;
 }
 
+.fullWidth {
+  width: 100%;
+}
+
+.width-15 {
+  width: 15%;
+}
+
+.relative {
+  position: relative;
+}
+
+.top-40 {
+  top: 40%;
+}
+
 .flex {
   flex-direction: row;
   display: flex;
   justify-content: space-evenly;
+}
+
+.justify-centre {
+  justify-content: center;
 }
 
 .column {
