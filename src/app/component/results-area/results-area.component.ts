@@ -1,7 +1,7 @@
 import { ChangeDetectorRef, Component, Input, OnInit } from '@angular/core';
 import { Trip } from '../../generated/tripGo';
-import { combineLatest, forkJoin, Subject, zip } from 'rxjs';
-import { map, withLatestFrom } from 'rxjs/operators';
+import { Subject, zip } from 'rxjs';
+import { map } from 'rxjs/operators';
 import { TripGoService } from '../../service/trip-go.service';
 
 @Component({
