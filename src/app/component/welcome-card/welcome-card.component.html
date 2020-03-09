@@ -1,0 +1,27 @@
+<ion-card>
+    <ion-card-header>
+        <div class="card-header">
+            <ion-card-title>Welcome!</ion-card-title>
+            <ion-button fill="clear" size="small" (click)="cardCollapsed = !cardCollapsed">
+                <ion-icon [hidden]="cardCollapsed" name="chevron-up-outline" size="large" color="dark"></ion-icon>
+                <ion-icon [hidden]="!cardCollapsed" name="chevron-down-outline" size="large" color="dark"></ion-icon>
+            </ion-button>
+        </div>
+    </ion-card-header>
+
+    <ion-card-content *ngIf="!cardCollapsed">
+        🍃 🚇 🚉 🌴
+        <br/>
+        <br/>
+        Welcome to Transport For Change!
+        <br/>
+        <br/>
+        At Transport For Change we want to help you make better transport choices.
+        <br/>
+        <br/>
+        Please enter your trip details below to see how choosing public transport over private vehicle will have a
+        huge
+        impact.
+    </ion-card-content>
+
+</ion-card>

@@ -13,7 +13,7 @@ import LatLng = google.maps.LatLng;
 export class AddressBarComponent implements OnInit {
     @Input() $startAndEndPoints: Subject<LatLongTuple>;
 
-    cardCollapsed = false;
+    cardCollapsed = true;
 
     startAddress: string;
     endAddress: string;
@@ -41,10 +41,10 @@ export class AddressBarComponent implements OnInit {
                 .pipe(
                     map(result => ({startPoint: result[0], endPoint: result[1]}))
                 ).subscribe(pair => {
-                    const startPoint = pair.startPoint;
-                    const endPoint = pair.endPoint;
-                    const latLongTuple = new LatLongTuple(startPoint, endPoint);
-                    this.$startAndEndPoints.next(latLongTuple);
+                const startPoint = pair.startPoint;
+                const endPoint = pair.endPoint;
+                const latLongTuple = new LatLongTuple(startPoint, endPoint);
+                this.$startAndEndPoints.next(latLongTuple);
             });
         }
 
