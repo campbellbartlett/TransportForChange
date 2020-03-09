@@ -1,7 +1,7 @@
+/// <reference types="@types/googlemaps" />
 import { Component, EventEmitter, Input, NgZone, OnInit, Output } from '@angular/core';
-// @ts-ignore
-import {} from 'googlemaps';
-import LatLng = google.maps.LatLng;
+import LatLngBounds = google.maps.LatLngBounds;
+import AutocompleteService = google.maps.places.AutocompleteService;
 
 @Component({
     selector: 'app-address-box',
@@ -34,7 +34,7 @@ export class AddressBoxComponent implements OnInit {
     }
 
     ngOnInit() {
-        this.GoogleAutocomplete = new google.maps.places.AutocompleteService();
+        this.GoogleAutocomplete = new AutocompleteService();
         this.autocomplete = {input: ''};
         this.autocompleteItems = [];
     }
@@ -44,7 +44,14 @@ export class AddressBoxComponent implements OnInit {
             // handled by changeEvent()
             return;
         }
-        this.GoogleAutocomplete.getPlacePredictions({input: this.autocomplete.input},
+
+        const autoCompleteRequest = {
+            input: this.autocomplete.input,
+            bounds: new LatLngBounds({lat: -33.8688, lng: 151.2093}),  // Lat long in Sydney
+            componentRestrictions: {country: 'au'}
+        };
+
+        this.GoogleAutocomplete.getPlacePredictions(autoCompleteRequest,
             (predictions, status) => {
                 this.autocompleteItems = [];
                 this.autoCompleteItemsHidden = predictions ? predictions.length === 0 : true;
