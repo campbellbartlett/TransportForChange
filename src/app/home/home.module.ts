@@ -9,9 +9,9 @@ import { HomePage } from './home.page';
 import { AddressBarComponent } from '../component/address-bar/address-bar.component';
 import { AddressBoxComponent } from '../component/address-box/address-box.component';
 import { ResultsAreaComponent } from '../component/results-area/results-area.component';
-import { AppModule } from '../app.module';
 import { MomentModule } from 'angular2-moment';
 import { ArriveDepartDurationPipe } from '../pipe/arrive-depart-duration.pipe';
+import { WelcomeCardComponent } from '../component/welcome-card/welcome-card.component';
 
 @NgModule({
     imports: [
@@ -32,7 +32,8 @@ import { ArriveDepartDurationPipe } from '../pipe/arrive-depart-duration.pipe';
         AddressBarComponent,
         AddressBoxComponent,
         ResultsAreaComponent,
-        ArriveDepartDurationPipe
+        ArriveDepartDurationPipe,
+        WelcomeCardComponent
     ]
 })
 export class HomePageModule {
