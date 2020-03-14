@@ -1,5 +1,5 @@
 ion-content {
-  --offset-top: -0px !important;
+  --offset-top: 2rem !important;
 }
 
 ion-title {
@@ -34,8 +34,8 @@ ion-title {
   margin-right: 0px;
 }
 
-.height-1rem {
-  height: 1rem;
+.height-1em {
+  height: 1em;
 }
 
 .padding {
@@ -45,5 +45,5 @@ ion-title {
 .title-container {
   color: #5f9bd5;
   font-family: "Comfortaa", sans-serif !important;
-  font-size: large;
+  font-size: xx-large;
 }
