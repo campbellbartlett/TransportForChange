@@ -2,23 +2,48 @@ ion-content {
   --offset-top: -0px !important;
 }
 
-ion-header {
-  background: #667db6;  /* fallback for old browsers */
-  background: -webkit-linear-gradient(to right, #667db6, #0082c8, #0082c8, #667db6);  /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to right, #667db6, #0082c8, #0082c8, #667db6); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-}
-
-ion-toolbar {
-  --background: none;
-}
-
 ion-title {
   background: transparent;
   --background: unset;
-  color: white;
   letter-spacing: -0.025rem;
 }
 
 .outlet {
   margin-top: 2rem;
+}
+
+.header-background {
+  display: none;
+}
+
+.flex {
+  display: flex;
+  flex-direction: column;
+}
+
+.title-top-container {
+  width: 50%;
+  text-align: right;
+  margin-left: 0px;
+  margin-right: auto;
+}
+
+.title-bottom-container {
+  width: calc(50% + 1rem);
+  margin-left: auto;
+  margin-right: 0px;
+}
+
+.height-1rem {
+  height: 1rem;
+}
+
+.padding {
+  padding: 0.6rem;
+}
+
+.title-container {
+  color: #5f9bd5;
+  font-family: "Comfortaa", sans-serif !important;
+  font-size: large;
 }

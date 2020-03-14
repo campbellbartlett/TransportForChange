@@ -10,9 +10,11 @@
  */
 
 @import url(http://fonts.googleapis.com/css?family=Oxygen);
-* {
-  font-family: "Oxygen", sans-serif !important;
-}
+@import url('https://fonts.googleapis.com/css?family=Comfortaa:300,400,600&display=swap');
+
+//* {
+//  font-family: "Oxygen", sans-serif;
+//}
 
 /* Core CSS required for Ionic components to work properly */
 @import "~@ionic/angular/css/core.css";
