@@ -12,6 +12,7 @@ import { ResultsAreaComponent } from '../component/results-area/results-area.com
 import { MomentModule } from 'angular2-moment';
 import { ArriveDepartDurationPipe } from '../pipe/arrive-depart-duration.pipe';
 import { WelcomeCardComponent } from '../component/welcome-card/welcome-card.component';
+import { StatsAreaComponent } from '../component/stats-area/stats-area.component';
 
 @NgModule({
     imports: [
@@ -33,7 +34,8 @@ import { WelcomeCardComponent } from '../component/welcome-card/welcome-card.com
         AddressBoxComponent,
         ResultsAreaComponent,
         ArriveDepartDurationPipe,
-        WelcomeCardComponent
+        WelcomeCardComponent,
+        StatsAreaComponent
     ]
 })
 export class HomePageModule {

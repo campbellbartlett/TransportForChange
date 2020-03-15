@@ -1,0 +1,13 @@
+<ion-card *ngIf="statistic && delta">
+    <ion-card-header>
+        <div class="card-header">
+            <ion-card-title>Did you know...</ion-card-title>
+        </div>
+    </ion-card-header>
+
+    <ion-card-content>
+        <div class="font-medium charcoal">{{statistic.getString(delta)}}</div>
+        <br>
+        <div class="font-small">Source: <a href="{{statistic.source.url}}">{{statistic.source.name}}</a></div>
+    </ion-card-content>
+</ion-card>
