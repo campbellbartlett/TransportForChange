@@ -49,7 +49,7 @@ const kmsInCar = new Statistic(
 );
 
 const kmsInAnAircraft = new Statistic(
-    'KMs in a private Aircraft',
+    'KMs in a commercial Aircraft',
     'Choosing to take this trip daily via Public Transport for a year will' +
     ' save the equivalent CO2 of a private aircraft travelling ${this.saving}km',
     6.44354580397181,
